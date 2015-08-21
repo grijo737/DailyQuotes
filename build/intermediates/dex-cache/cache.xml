@@ -9,6 +9,41 @@
         <dex dex="/Users/rijogeorge/DailyQuotes/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-47bd440c988d2e21e6b8285f4b6e0ad3408618fd.jar" />
     </item>
     <item
+        jar="/Users/rijogeorge/DailyQuotes/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="/Users/rijogeorge/DailyQuotes/app/build/intermediates/pre-dexed/debug/classes-30de0c27084c7a09bf86065e0de97e4dfee806d6.jar" />
+    </item>
+    <item
+        jar="/Users/rijogeorge/AndroidProj/DailyQuotes/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="/Users/rijogeorge/AndroidProj/DailyQuotes/app/build/intermediates/pre-dexed/debug/classes-7f1769cfbacb2758ddce69ececf9e0fd8ca64515.jar" />
+    </item>
+    <item
+        jar="/Users/rijogeorge/AndroidProj/DailyQuotes/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/libs/internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="/Users/rijogeorge/AndroidProj/DailyQuotes/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-02dd084bd91f9a64dc135ad9d459516b3970d609.jar" />
+    </item>
+    <item
+        jar="/Users/rijogeorge/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="/Users/rijogeorge/DailyQuotes/app/build/intermediates/pre-dexed/debug/gson-2.2.4-f6b01776bb7fa3d515c7dffd47022c800baf79c0.jar" />
+    </item>
+    <item
+        jar="/Users/rijogeorge/Documents/Android/software/adt-bundle-mac-x86_64-20140702 2/sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="/Users/rijogeorge/DailyQuotes/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-af77c622f6c5be6874a9f60e301599272ba7b654.jar" />
+    </item>
+    <item
         jar="/Users/rijogeorge/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.8/77bbfe240e437ecb396d982afa0d3bd4f9090ba7/android-async-http-1.4.8.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -30,25 +65,11 @@
         <dex dex="/Users/rijogeorge/DailyQuotes/app/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.4-8899d90847b44029ebec84a19fbcb0fe0ce91c55.jar" />
     </item>
     <item
-        jar="/Users/rijogeorge/DailyQuotes/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/classes.jar"
+        jar="/Users/rijogeorge/AndroidProj/DailyQuotes/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="/Users/rijogeorge/DailyQuotes/app/build/intermediates/pre-dexed/debug/classes-30de0c27084c7a09bf86065e0de97e4dfee806d6.jar" />
-    </item>
-    <item
-        jar="/Users/rijogeorge/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a60a5e993c98c864010053cb901b7eab25306568">
-        <dex dex="/Users/rijogeorge/DailyQuotes/app/build/intermediates/pre-dexed/debug/gson-2.2.4-f6b01776bb7fa3d515c7dffd47022c800baf79c0.jar" />
-    </item>
-    <item
-        jar="/Users/rijogeorge/Documents/Android/software/adt-bundle-mac-x86_64-20140702 2/sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex dex="/Users/rijogeorge/DailyQuotes/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-af77c622f6c5be6874a9f60e301599272ba7b654.jar" />
+        <dex dex="/Users/rijogeorge/AndroidProj/DailyQuotes/app/build/intermediates/pre-dexed/debug/classes-0dd56d2d71177f7cdd177d12f4c5a138f9d75e88.jar" />
     </item>
 
 </items>
