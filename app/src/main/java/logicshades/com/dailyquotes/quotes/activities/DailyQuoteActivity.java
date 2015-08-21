@@ -1,5 +1,7 @@
 package logicshades.com.dailyquotes.quotes.activities;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +16,7 @@ import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListene
 
 import org.apache.http.Header;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import logicshades.com.dailyquotes.R;
@@ -24,6 +27,7 @@ import logicshades.com.dailyquotes.quotes.utilities.Utility;
 
 
 public class DailyQuoteActivity extends AppCompatActivity {
+    public static final String QUOTEIMAGEUPDATETIME="com.logicshades.quoteImageUpdateTime";
     private DisplayImageOptions mProfileImageOptions = new DisplayImageOptions.Builder()
             .cacheOnDisk(true)
             .imageScaleType(ImageScaleType.EXACTLY)
@@ -36,9 +40,12 @@ public class DailyQuoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_quote);
         dailyImage=(ImageView)findViewById(R.id.dailyImage);
-        boolean fetchQuote= Utility.isQuoteNeedUpdate();
+        SharedPreferences sharedPref = DailyQuoteActivity.this.getPreferences(Context.MODE_PRIVATE);
+        boolean fetchQuote= Utility.isQuoteNeedUpdate(sharedPref);
         if(fetchQuote)
             getQuoteFromServer();
+        else
+            getQuoteFromStorage();
     }
 
     private void getQuoteFromServer(){
@@ -61,13 +68,32 @@ public class DailyQuoteActivity extends AppCompatActivity {
         ImageLoader.getInstance().loadImage(imageUrl, new SimpleImageLoadingListener() {
             @Override
             public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
-               dailyImage.setImageBitmap(loadedImage);
+                dailyImage.setImageBitmap(loadedImage);
                 try {
-                    Utility.storeBitmap(loadedImage,getApplicationContext().getFilesDir()+Utility.DAILYIMAGEFILEPATH,Utility.DAILYIMAGEFILENAME);
+                    Utility.storeBitmap(loadedImage, getApplicationContext().getFilesDir() + Utility.DAILYIMAGEFILEPATH, Utility.DAILYIMAGEFILENAME);
+                    storeQuoteImageUpdateTime();
+
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    Log.d(Utility.DAILYQUOTEMESSAGE, "error in storing bitmap to internal storage");
                 }
             }
         });
+    }
+
+    public void getQuoteFromStorage(){
+        try {
+            Bitmap dailyQuoteImage=Utility.getStoredBitmap(getApplicationContext().getFilesDir()+Utility.DAILYIMAGEFILEPATH,Utility.DAILYIMAGEFILENAME);
+            dailyImage.setImageBitmap(dailyQuoteImage);
+        } catch (FileNotFoundException e) {
+            Log.d(Utility.DAILYQUOTEMESSAGE, "error in loading bitmap from internal storage");
+            getQuoteFromServer();
+        }
+    }
+    private void storeQuoteImageUpdateTime(){
+        long updateTime = System.currentTimeMillis() / 1000L;
+        SharedPreferences sharedPref = DailyQuoteActivity.this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putLong(QUOTEIMAGEUPDATETIME,updateTime);
+        editor.commit();
     }
 }
