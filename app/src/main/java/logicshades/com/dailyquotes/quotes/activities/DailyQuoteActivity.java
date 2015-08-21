@@ -14,6 +14,8 @@ import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListene
 
 import org.apache.http.Header;
 
+import java.io.IOException;
+
 import logicshades.com.dailyquotes.R;
 import logicshades.com.dailyquotes.quotes.domain.DailyQuote;
 import logicshades.com.dailyquotes.quotes.rest.GetDailyQuote;
@@ -60,6 +62,11 @@ public class DailyQuoteActivity extends AppCompatActivity {
             @Override
             public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
                dailyImage.setImageBitmap(loadedImage);
+                try {
+                    Utility.storeBitmap(loadedImage,getApplicationContext().getFilesDir()+"DailyQuote/DailyQuoteImage","quoteTodayImage.png");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
