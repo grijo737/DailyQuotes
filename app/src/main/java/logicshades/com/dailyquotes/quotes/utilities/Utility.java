@@ -10,6 +10,8 @@ import java.io.IOException;
  * Created by rijogeorge on 8/20/15.
  */
 public class Utility {
+    public static final String DAILYIMAGEFILEPATH="DailyQuote/DailyQuoteImage";
+    public static final String DAILYIMAGEFILENAME="quoteTodayImage.png";
     public static boolean isQuoteNeedUpdate(){
         return true;
     }
@@ -19,7 +21,7 @@ public class Utility {
             dir.mkdirs();
         File bitmapFile=new File(dir,filename);
         FileOutputStream fOut=new FileOutputStream(bitmapFile);
-        bitmap.compress(Bitmap.CompressFormat.PNG,100,fOut);
+        bitmap.compress(Bitmap.CompressFormat.PNG,100, fOut);
         fOut.flush();
         fOut.close();
     }
